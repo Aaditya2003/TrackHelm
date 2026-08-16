@@ -23,7 +23,7 @@ Then open `http://localhost:8080`.
 
 ## Publish with GitHub Pages
 
-Push these files to the `main` branch of a GitHub repository, then choose **Settings → Pages → Source → GitHub Actions**. The included workflow publishes the static site on every push; no build command or backend is required.
+Push these files to the `main` branch of a GitHub repository. Before the first run, choose **Settings → Pages → Build and deployment → Source: GitHub Actions**. This one-time setting creates the Pages site; the included workflow then publishes on every push with no build command or backend.
 
 The site uses relative asset paths and hash-based chapters, so it works from both user/organization Pages and project Pages URLs.
 
