@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05050a" />
+    <meta name="description" content="Tracehelm turns live GPS, sensor, voice, and visual signals into safe operational decisions." />
+    <meta property="og:title" content="Tracehelm — The live world, understood" />
+    <meta property="og:description" content="Real-time decision infrastructure for physical operations." />
+    <title>Tracehelm — The live world, understood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%2305050a%22/><path d=%22M15 18h34M32 18v29M20 32h24%22 stroke=%22%234ce5ff%22 stroke-width=%224%22 fill=%22none%22/></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <div class="boot" aria-hidden="true">
+      <div class="boot__glyph"><i></i><i></i><i></i></div>
+      <div class="boot__line"><span></span></div>
+      <p>BUILDING LIVE WORLD <b data-boot-percent>0%</b></p>
+    </div>
+
+    <canvas id="stage" tabindex="0" aria-label="Interactive 3D Tracehelm world. Drag to rotate objects. Use keys 1 through 5 to change chapters."></canvas>
+    <div class="scene-fallback" aria-hidden="true"><div></div></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"><i></i><span>EXPLORE</span></div>
+
+    <header class="topbar">
+      <button class="wordmark magnetic" data-go="world" aria-label="Tracehelm, return to world view">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M7 9h26M20 9v22M10 20h20"/><circle cx="20" cy="20" r="16"/></svg>
+        <span>TRACE<em>/</em>HELM</span>
+      </button>
+      <div class="topbar__descriptor"><span></span> REAL-TIME DECISION INFRASTRUCTURE</div>
+      <div class="topbar__controls">
+        <div class="network-status"><i></i><span>NETWORK</span><b>ONLINE</b></div>
+        <button class="icon-control" data-audio aria-pressed="false" aria-label="Turn ambient sound on">
+          <span class="sound-bars"><i></i><i></i><i></i></span>
+        </button>
+        <button class="enter-control magnetic" data-go="incident">RUN SCENARIO <span>↗</span></button>
+      </div>
+    </header>
+
+    <main class="experience">
+      <div class="chapter-track" aria-hidden="true"><span data-chapter-number>01</span><i><b data-chapter-progress></b></i><span>05</span></div>
+
+      <section class="chapter chapter--world active" data-chapter="world" aria-labelledby="world-title">
+        <div class="chapter__copy">
+          <div class="system-tag"><i></i> PHYSICAL WORLD / LIVE</div>
+          <h1 id="world-title">The live world,<br /><em>understood.</em></h1>
+          <p>Tracehelm fuses location, telemetry, vision, voice, and policy into the next safe move—while your operation is still moving.</p>
+          <div class="hero-actions">
+            <button class="primary-action magnetic" data-go="incident">Explore a live decision <span>↗</span></button>
+            <button class="ghost-action" data-go="model"><i>◉</i> Enter the model layer</button>
+          </div>
+        </div>
+
+        <aside class="world-readout glass-card">
+          <div class="card-label"><span>SELECTED SIGNAL</span><b data-node-state>WATCH</b></div>
+          <small data-node-code>IN / DEL-04</small>
+          <h2 data-node-city>New Delhi</h2>
+          <p data-node-copy>Cold-chain vehicle diverging from its planned corridor.</p>
+          <div class="readout-metrics">
+            <div><span>Confidence</span><b data-node-confidence>94%</b></div>
+            <div><span>Variance</span><b data-node-variance>+740m</b></div>
+            <div><span>Decision</span><b data-node-decision>Open</b></div>
+          </div>
+          <button data-focus>Focus signal <span>⌖</span></button>
+        </aside>
+
+        <div class="world-stats" aria-label="Live network metrics">
+          <div><span>ACTIVE ASSETS</span><strong>2,418</strong><small>+14 today</small></div>
+          <div><span>SIGNALS / SEC</span><strong>18.6K</strong><small>99.98% clean</small></div>
+          <div><span>OPEN DECISIONS</span><strong>07</strong><small>3 need review</small></div>
+        </div>
+
+        <div class="gesture-hint"><span>↔</span><p>DRAG THE WORLD<br /><small>SELECT A LIVE NODE</small></p></div>
+      </section>
+
+      <section class="chapter chapter--incident" data-chapter="incident" aria-labelledby="incident-title" aria-hidden="true">
+        <div class="chapter__copy chapter__copy--compact">
+          <div class="system-tag alert"><i></i> LIVE EXCEPTION / TRK-204</div>
+          <h2 id="incident-title">One moment.<br /><em>Every signal.</em></h2>
+          <p>A Delhi cold-chain vehicle is late and warming. Change the physical conditions and watch the decision evolve.</p>
+        </div>
+
+        <aside class="incident-console glass-card">
+          <div class="console-top"><span>SCENARIO CONTROL</span><b data-risk-label>MEDIUM RISK</b></div>
+          <label>
+            <span>Cargo temperature <b data-temp-value>7.8°C</b></span>
+            <input type="range" min="2" max="14" step="0.1" value="7.8" data-sensor="temperature" />
+          </label>
+          <label>
+            <span>Traffic congestion <b data-traffic-value>82%</b></span>
+            <input type="range" min="0" max="100" value="82" data-sensor="traffic" />
+          </label>
+          <label>
+            <span>Route deviation <b data-route-value>740m</b></span>
+            <input type="range" min="0" max="1600" step="10" value="740" data-sensor="route" />
+          </label>
+          <div class="decision-card">
+            <div><span>TRACEHELM PROPOSES</span><b data-confidence>94% CONFIDENCE</b></div>
+            <h3 data-recommendation>Reroute + notify</h3>
+            <p data-reason>Protect the cold-chain SLA using Ring Road and reserve Dock 4.</p>
+            <div class="decision-pills"><span>Reversible</span><span>Policy cleared</span><span>Human approval</span></div>
+          </div>
+          <div class="console-actions">
+            <button class="approve" data-approve>Approve <span>↗</span></button>
+            <button data-escalate>Escalate</button>
+          </div>
+        </aside>
+
+        <div class="telemetry-stack" aria-label="Live truck telemetry">
+          <div class="telemetry glass-card"><span>TEMP / TMP-04</span><strong data-float-temp>7.8°</strong><i class="wave"></i></div>
+          <div class="telemetry glass-card"><span>GPS / DEL-04</span><strong>18 <small>km/h</small></strong><i class="route-mini"></i></div>
+          <div class="telemetry glass-card"><span>ETA / HUB-02</span><strong data-eta>+21 <small>min</small></strong><i class="pulse-dot"></i></div>
+        </div>
+      </section>
+
+      <section class="chapter chapter--model" data-chapter="model" aria-labelledby="model-title" aria-hidden="true">
+        <div class="chapter__copy chapter__copy--compact">
+          <div class="system-tag"><i></i> INTERACTION MODEL / 200MS</div>
+          <h2 id="model-title">Present now.<br /><em>Thinking ahead.</em></h2>
+          <p>A time-aware interaction layer stays continuously present while a background model handles deeper reasoning and tools.</p>
+          <a class="source-link" href="https://thinkingmachines.ai/blog/interaction-models/" target="_blank" rel="noreferrer">Architecture inspired by Thinking Machines Lab <span>↗</span></a>
+        </div>
+
+        <div class="model-timeline glass-card">
+          <div class="timeline-head"><span>CONTINUOUS MICRO-TURNS</span><b>LIVE</b></div>
+          <div class="timeline-scale"><span>0ms</span><span>200</span><span>400</span><span>600</span><span>800</span></div>
+          <div class="timeline-row"><label>INPUT</label><i>GPS</i><i>VIDEO</i><i>TEMP</i><i>VOICE</i><i>GPS</i></div>
+          <div class="timeline-row output"><label>OUTPUT</label><i></i><i>OBSERVE</i><i>WARN</i><i>DELEGATE</i><i>ACT</i></div>
+          <div class="timeline-cursor"></div>
+        </div>
+
+        <div class="model-cards" role="group" aria-label="Explore the interaction-model architecture">
+          <button class="model-card active" data-model-part="interaction"><small>01 / FOREGROUND</small><strong>Interaction model</strong><span>Perceives and responds in continuous 200ms micro-turns.</span></button>
+          <button class="model-card" data-model-part="background"><small>02 / ASYNC</small><strong>Background reasoning</strong><span>Plans, uses tools, and solves longer-horizon problems.</span></button>
+          <button class="model-card" data-model-part="context"><small>03 / SHARED</small><strong>Living context</strong><span>Both layers see the same evolving operational reality.</span></button>
+          <button class="model-card" data-model-part="tools"><small>04 / OUTPUT</small><strong>Tools + policy</strong><span>Structured actions pass through deterministic safeguards.</span></button>
+        </div>
+      </section>
+
+      <section class="chapter chapter--systems" data-chapter="systems" aria-labelledby="systems-title" aria-hidden="true">
+        <div class="chapter__copy chapter__copy--compact">
+          <div class="system-tag"><i></i> DEPLOYED INTELLIGENCE</div>
+          <h2 id="systems-title">Built for the<br /><em>moving world.</em></h2>
+          <p>Select a physical system. Each object is procedural 3D—not a rendered image.</p>
+        </div>
+
+        <div class="system-selector" role="group" aria-label="Select an application">
+          <button class="active" data-system="fleet"><span>01</span><strong>Fleet</strong><small>GPS · TEMP · SLA</small></button>
+          <button data-system="factory"><span>02</span><strong>Factory</strong><small>VISION · VIBRATION</small></button>
+          <button data-system="energy"><span>03</span><strong>Energy</strong><small>LOAD · WEATHER · PRICE</small></button>
+          <button data-system="field"><span>04</span><strong>Field</strong><small>SOIL · PUMPS · CLIMATE</small></button>
+        </div>
+
+        <aside class="system-detail glass-card">
+          <div><span data-system-index>01 / FLEET</span><b>LIVE READY</b></div>
+          <h3 data-system-title>See disruption before delay.</h3>
+          <p data-system-copy>Coordinate routes, cargo, drivers, docks, and customers as one continuous system.</p>
+          <ul data-system-list><li>Predict route exceptions</li><li>Protect cold-chain integrity</li><li>Coordinate every stakeholder</li></ul>
+          <button data-launch-system>Launch this system <span>↗</span></button>
+        </aside>
+        <div class="orbit-instruction">DRAG TO ROTATE THE OBJECT ARRAY <span>↔</span></div>
+      </section>
+
+      <section class="chapter chapter--policy" data-chapter="policy" aria-labelledby="policy-title" aria-hidden="true">
+        <div class="chapter__copy chapter__copy--compact">
+          <div class="system-tag secure"><i></i> DETERMINISTIC CONTROL</div>
+          <h2 id="policy-title">Intelligence,<br /><em>with boundaries.</em></h2>
+          <p>The model can propose. Only the policy gateway can authorize. Test an action against the live guardrails.</p>
+        </div>
+
+        <aside class="policy-console glass-card">
+          <div class="console-top"><span>ACTION ENVELOPE</span><b data-gate-status>READY</b></div>
+          <div class="action-packet"><small>PROPOSED ACTION</small><strong data-action-name>REROUTE TRK-204</strong><span>risk tier / <b data-risk-tier>02</b></span></div>
+          <label class="risk-select"><span>Simulated risk</span><input type="range" min="1" max="5" value="2" data-policy-risk /><b data-policy-risk-value>02</b></label>
+          <div class="guardrails">
+            <span class="pass"><i>✓</i> Reversible</span>
+            <span class="pass" data-limit-check><i>✓</i> Within limits</span>
+            <span class="pass" data-human-check><i>✓</i> Human present</span>
+            <span class="pass"><i>✓</i> Audit enabled</span>
+          </div>
+          <button class="gate-button" data-test-gate>Send through policy gate <span>→</span></button>
+          <div class="gate-result" aria-live="polite"><i>✓</i><div><strong>Action permitted</strong><span>Logged · reversible · monitored</span></div></div>
+        </aside>
+
+        <div class="policy-principles">
+          <div><span>01</span><p>Constrained<br />action schema</p></div>
+          <div><span>02</span><p>Approval by<br />risk tier</p></div>
+          <div><span>03</span><p>Full action<br />audit</p></div>
+          <div><span>04</span><p>Instant<br />override</p></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="hover-label" aria-hidden="true"><span></span><b></b></aside>
+
+    <nav class="command-dock" aria-label="Experience chapters">
+      <button class="active" data-go="world" aria-current="page"><span class="dock-icon world-icon"><i></i></span><b>World</b><small>01</small></button>
+      <button data-go="incident"><span class="dock-icon incident-icon"><i></i></span><b>Live decision</b><small>02</small></button>
+      <button data-go="model"><span class="dock-icon model-icon"><i></i></span><b>Model layer</b><small>03</small></button>
+      <button data-go="systems"><span class="dock-icon systems-icon"><i></i></span><b>Systems</b><small>04</small></button>
+      <button data-go="policy"><span class="dock-icon policy-icon"><i></i></span><b>Policy gate</b><small>05</small></button>
+    </nav>
+
+    <div class="shortcuts"><span>1–5</span> NAVIGATE <span>DRAG</span> ORBIT <span>SPACE</span> REPLAY</div>
+
+    <div class="replay-overlay" aria-hidden="true">
+      <div class="replay-head"><span>BLACK BOX / DECISION REPLAY</span><b data-replay-close>RELEASE SPACE TO CLOSE</b></div>
+      <div class="replay-events">
+        <div><time>14:31:42.000</time><i></i><p>Congestion confidence crossed 0.90</p></div>
+        <div><time>14:31:56.200</time><i></i><p>Temperature trend accelerating</p></div>
+        <div><time>14:32:08.400</time><i></i><p>Background route planner delegated</p></div>
+        <div><time>14:32:09.000</time><i></i><p>Policy-safe action composed</p></div>
+      </div>
+    </div>
+
+    <div class="incident-mode" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Hidden incident mode">
+      <div class="incident-grid"></div>
+      <small>HIDDEN LAYER / 0X04</small>
+      <h2>INCIDENT<br /><em>INJECTED.</em></h2>
+      <p>You found Tracehelm’s hidden system state. The network is now simulating a cascading exception.</p>
+      <button data-close-incident>Stabilize network</button>
+    </div>
+
+    <div class="toast" role="status" aria-live="polite"></div>
+    <div class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-experience-status></div>
+    <noscript><div class="noscript">Tracehelm’s 3D experience requires JavaScript.</div></noscript>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
